@@ -13,6 +13,7 @@ while True:
     match = re.search(
         r'[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}-[A-Za-z0-9]{4}', text)
     if not match:
+        print(text)  # Assuming that the CSV header is the only line not to match.
         continue
     token = match.group(0)
     lines[token] = text
