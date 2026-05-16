@@ -22,7 +22,7 @@ var QUERIES = [
 
 console.log("Running...");
 for (let query of QUERIES) {
-  for (let i = 1; i <= 5; ++i) {
+  for (let i = 1; i <= 5;) {
     var url = `https://github.com/search?q=${encodeURIComponent(query)}&ref=opensearch&type=code&p=${i}`;
     var response = await fetch(url, {
       headers: {
@@ -46,7 +46,10 @@ for (let query of QUERIES) {
       credentials: "include",
     });
 
-    if (response.status == 429) alert('Rate limited; will proceed once this alert is closed.');
+    if (response.status == 429) {
+        alert('Rate limited; will proceed once this alert is closed.');
+        continue;
+    }
     var j = await response.json();
     var appended = Array.from(
       j.payload.results
@@ -55,6 +58,7 @@ for (let query of QUERIES) {
         .matchAll("live_[0-9]{7,10}_[a-zA-Z0-9]{20,}"),
     ).map((e) => e[0]);
     r.push.apply(r, appended);
+    i++;
   }
 }
 console.log("Finished!");
