@@ -1,4 +1,7 @@
 # YouTube Live Key Repository
+
+**Note that any YouTube livestream which you use with these keys *will not be public* unless the original account's owner explicitly authorises it.**
+
 I've amassed a collection of publicly available YouTube livestream keys.
 
 I tested them using a dummy payload made by FFmpeg.
