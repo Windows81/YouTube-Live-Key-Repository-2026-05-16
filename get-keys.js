@@ -19,6 +19,7 @@ var QUERIES = [
 	"/youtube\.com\/live2\/[wx][0-9a-z]{3}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}/ NOT abcd NOT xxxx NOT aaaa",
 	"/youtube\.com\/live2\/[yz][0-9a-z]{3}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}/ NOT abcd NOT xxxx NOT aaaa",
 ];
+
 console.log("Running...");
 for (let query of QUERIES) {
   for (let i = 1; i <= 5; ++i) {
@@ -45,6 +46,7 @@ for (let query of QUERIES) {
       credentials: "include",
     });
 
+    if (response.status == 429) alert('Rate limited; will proceed once this alert is closed.');
     var j = await response.json();
     var appended = Array.from(
       j.payload.results
