@@ -1,6 +1,6 @@
 # YouTube Live Key Repository
 
-**Note that any YouTube livestream which you use with these keys *will not be public* unless the original account's owner explicitly authorises it.**
+**Note that any YouTube livestream which you use with these keys *will not be public* unless the original account's owner explicitly authorises it.** If you're looking to interfere with livestreams elsewhere, I recommend you use Twitch.
 
 I've amassed a collection of publicly available YouTube livestream keys.
 
