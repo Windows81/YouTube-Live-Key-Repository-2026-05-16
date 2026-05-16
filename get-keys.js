@@ -1,4 +1,4 @@
-var r = [];
+var resultDump = {};
 function buildQuery(chars) {
 	return `/youtube\\.com\\/live2\\/[${chars}][0-9a-z]{3}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}/ NOT abcd NOT xxxx NOT aaaa"`;
 }
@@ -60,11 +60,8 @@ for (let query of QUERIES) {
 
 		for (let result of j.payload.results) {
 			let resultData = result.snippets.flatMap((e) => e.lines).join("\n");
-      let keyMatches = resultData.matchAll("[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}").map((e) => e[0]);
-			r.push.apply(
-				r,
-				keyMatches.map((k) => `${repo_nwo} ${k}`),
-			);
+			let keyMatches = Array.from(resultData.matchAll("[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}").map((e) => e[0]));
+			resultDump |= Object.fromEntries(keyMatches.map((k) => [`${result.repo_nwo},${k}`, true]));
 		}
 
 		i++;
