@@ -1,6 +1,6 @@
 var r = [];
 function buildQuery(chars) {
-	return `/youtube\.com\/live2\/[${chars}][0-9a-z]{3}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}/ NOT abcd NOT xxxx NOT aaaa"`;
+	return `/youtube\\.com\\/live2\\/[${chars}][0-9a-z]{3}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}/ NOT abcd NOT xxxx NOT aaaa"`;
 }
 var QUERIES = [
 	buildQuery("01"),
