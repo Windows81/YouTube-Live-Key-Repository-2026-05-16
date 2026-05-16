@@ -9,7 +9,7 @@ Navigate to GitHub, then use your browser's DevTools to run [`get-keys.js`](./ge
 Then, once `"Finished!"` is printed, copy the result.
 
 ```js
-copy(Array.from(Object.keys(resultDump)).join('\n'))
+copy('repo_nwo,stream_key\n'+Array.from(Object.keys(resultDump)).join('\n'))
 ```
 
 Then download and run [`test-youtube-live.py`](./test-youtube-live.py), making sure to have installed:
