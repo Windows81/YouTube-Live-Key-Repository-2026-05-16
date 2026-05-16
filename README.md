@@ -12,7 +12,7 @@ Then, once `"Finished!"` is printed, copy the result.
 copy(Array.from(Object.keys(resultDump)).join('\n'))
 ```
 
-Then download and run [`test-youtube.py`](./test-youtube.py), making sure to have installed:
+Then download and run [`test-youtube-live.py`](./test-youtube-live.py), making sure to have installed:
 - FFmpeg
 
 Paste the lines you just copied into the program's standard input.
